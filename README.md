@@ -10,7 +10,7 @@ Welcome to the Best Buy Cloud-Native Application project! This document details 
 
 ### **Architecture Diagram**
 
-[Insert the updated architecture diagram here. Ensure it includes key components such as Azure Service Bus, AI-Service, Kubernetes cluster, and the microservices ecosystem.]
+![alt text](Architecture.png)
 
 ### **Application Components**
 

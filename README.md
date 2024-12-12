@@ -8,10 +8,30 @@ Welcome to the Best Buy Cloud-Native Application project! This document details 
 ---
 
 ## **Updated Application Architecture**
+## Architecture
+
+The application has the following services: 
+
+| Service | Description | Github Repo |
+| --- | --- | --- |
+| `store-front` | Web app for customers to place orders (Vue.js) | link |
+| `store-admin` | Web app used by store employees to view orders in queue and manage products (Vue.js) |  |
+| `order-service` | This service is used for placing orders (Javascript) |  |
+| `product-service` | This service is used to perform CRUD operations on products (Rust) |  |
+| `makeline-service` | This service handles processing orders from the queue and completing them (Golang) |  |
+| `ai-service` | Optional service for adding generative text and graphics creation (Python) |  |
+| `rabbitmq` | RabbitMQ for an order queue |  |
+| `mongodb` | MongoDB instance for persisted data |  |
+| `virtual-customer` | Simulates order creation on a scheduled basis (Rust) |  |
+| `virtual-worker` | Simulates order completion on a scheduled basis (Rust) |  |
+
+
+
 
 ### **Architecture Diagram**
 
 ![alt text](Architecture.png)
+
 
 ### **Application Components**
 

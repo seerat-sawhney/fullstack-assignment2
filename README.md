@@ -6,6 +6,12 @@
 Welcome to the Best Buy Cloud-Native Application project! This document details the deployment and management of a microservices-based architecture for Best Buy’s online store, enriched with modern cloud-native practices. The project demonstrates the use of Kubernetes for container orchestration, Azure Service Bus for order queuing, and Azure OpenAI for AI-powered functionalities.
 
 ---
+## Step 1: Clone the BestBuyApplication Repository
+To begin, clone the [**BestBuyApp**]  repository, which contains all necessary deployment files.
+
+ **Review the Deployment Files**:
+   - Navigate to the `Deployment Files` folder
+   - This folder contains YAML files for deploying all necessary Kubernetes resources, including services, deployments, StatefulSets, ConfigMaps, and Secrets.
 
 ## **Updated Application Architecture**
 ## Architecture
@@ -65,51 +71,53 @@ The Best Buy Cloud-Native Application provides:
   - Managed Azure resources for reliability and performance.
 
 ---
+## Step 2: Create an Azure Kubernetes Cluster (AKS)
 
-## **Deployment Guide**
+1. **Log in to Azure Portal:**
+   - Go to [https://portal.azure.com](https://portal.azure.com) and log in with your Azure account.
 
-### **Prerequisites**
+2. **Create a Resource Group:**
+   - In the Azure Portal, search for **Resource Groups** in the search bar.
+   - Click **Create** and fill in the following:
+     - **Resource group name**: `AlgonquinPetStoreRG`
+     - **Region**: `Canada`.
+   - Click **Review + Create** and then **Create**.
 
-# Prerequisites Setup for Best Buy Cloud-Native Application
-
-## 1. Set Up Azure Kubernetes Service (AKS)
-
-### Step 1: Create a Resource Group
-1. Sign in to the [Azure Portal](https://portal.azure.com).
-2. Navigate to **Resource Groups**.
-3. Click **+ Create**.
-4. Provide:
-   - **Subscription**: Select your subscription.
-   - **Resource Group Name**: Enter a unique name (e.g., `bestbuyss').
-   - **Region**: Choose Canada Central
-5. Click **Review + Create**, then **Create**.
-
-### Step 2: Create the AKS Cluster
-1. In the Azure Portal, navigate to **Azure Kubernetes Service**.
-2. Click **+ Create** > **Kubernetes Cluster**.
-3. Provide:
-   - **Cluster Name**: Enter a name (e.g., `bestbuyclusterseerat`).
-   - **Region**: Select the same region as your resource group i.e Canada Central.
-   - **Node Count**: Start with 3 nodes (default).
-   - **Node Image**: No schedule
-  
-     
-### Configure Node Pools
-
- **First Node Pool: systemnode**
-   - **Size**: D2as-V4
-   - **Scale Method**: Manual
-   - **Node Count**: 1
-   - **Max Pods per Node**: 110
-
- **First Node Pool: workernode**
-   - **Size**: D2as-V4
-   - **Scale Method**: Manual
-   - **Node Count**: 2
-   - **Max Pods per Node**: 30
+3. **Create an AKS Cluster:**
+   - In the search bar, type **Kubernetes services** and click on it.
+   - Click **Create** and select **Kubernetes cluster**
+   - In the `Basics` tap fill in the following details:
+     - **Subscription**: Select your subscription.
+     - **Resource group**: Choose `AlgonquinPetStoreRG`.
+     - **Cluster preset configuration**: Choose `Dev/Test`.
+     - **Kubernetes cluster name**: `AlgonquinPetStoreCluster`.
+     - **Region**: Same as your resource group (e.g., `Canada`).
+     - **Availability zones**: `None`.
+     - **AKS pricing tier**: `Free`.
+     - **Kubernetes version**: `Default`.
+     - **Automatic upgrade**: `Disabled`.
+     - **Automatic upgrade scheduler**: `No schedule`.
+     - **Node security channel type**: `None`.
+     - **Security channel scheduler**: `No schedule`.
+     - **Authentication and Authorization**: `Local accounts with Kubernetes RBAC`.
+   - In the `Node pools` tap fill in the following details:
+     - Select **agentpool**. Optionally change its name to `masterpool`. This nodes will have the controlplane.
+        - Set **node size** to `D2as_v4`.
+        - **Scale method**: `Manual`
+        - **Node count**: `1`
+        - Click `update`
+     - Click on **Add node pool**:
+        - **Node pool name**: `workerspool`.
+        - **Mode**: `User` 
+        - Set **node size** to `D2as_v4`.
+        - **Scale method**: `Manual`
+        - **Node count**: `2`
+        - Click `add`
+   - Click **Review + Create**, and then **Create**. The deployment will take a few minutes.
 
 
-6. Click **Review + Create**, then **Create**.
+
+
 
 ### Step 3: Configure kubectl Access
 1. Install the Azure CLI if you haven't already ([download link](https://docs.microsoft.com/en-us/cli/azure/install-azure-cli)).

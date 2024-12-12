@@ -354,29 +354,59 @@ Explanation: The db.orders.find() command fetches and displays all documents (re
 ## Testing and Validation
 
 
-
 ## **Microservices and Docker Images**
 
-| **Service**          | **Repository Link**        | **Docker Image Link**             |
-| -------------------- | -------------------------- | --------------------------------- |
-| **Store-Front**      | [GitHub Link](github-link) | [Docker Hub Link](dockerhub-link) |
-| **Order-Service**    | [GitHub Link](github-link) | [Docker Hub Link](dockerhub-link) |
-| **Product-Service**  | [GitHub Link](github-link) | [Docker Hub Link](dockerhub-link) |
-| **Makeline-Service** | [GitHub Link](github-link) | [Docker Hub Link](dockerhub-link) |
-| **Store-admin**      | [GitHub Link](github-link) | [Docker Hub Link](dockerhub-link) |
-| **AI-Service**       | [GitHub Link](github-link) | [Docker Hub Link](dockerhub-link) |
-| **Virtual-Customer** | [GitHub Link](github-link) | [Docker Hub Link](dockerhub-link) |
-| **Virtual-worker**   | [GitHub Link](github-link) | [Docker Hub Link](dockerhub-link) |
+| **Service**          | **Docker Image  Link**     | 
+| -------------------- | -------------------------- | 
+| **Store-Front**      | [GitHub Link](github-link) | 
+| **Order-Service**    | [GitHub Link](github-link) | 
+| **Product-Service**  | [GitHub Link](github-link) | 
+| **Makeline-Service** | [GitHub Link](github-link) | 
+| **Store-admin**      | [GitHub Link](github-link) | 
+| **AI-Service**       | [GitHub Link](github-link) | 
+| **Virtual-Customer** | [GitHub Link](github-link) | 
+| **Virtual-worker**   | [GitHub Link](github-link) | 
+
+---
+## Docker
+
+### **Step 1: Construct Docker Images for All Repositories**
+
+```bash
+docker build -t ai-service-bestbuy:latest .  
+docker build -t makeline-service-bestbuy:latest . 
+docker build -t product-service-bestbuy:latest . 
+docker build -t store-front-bestbuy:latest . 
+docker build -t virtual-worker-bestbuy:latest . 
+docker build -t order-service-bestbuy:latest .  
+docker build -t store-admin-bestbuy:latest .  
+docker build -t virtual-customer-bestbuy:latest .
+
+### Step 2: Assign Tags to Docker Images
+
+docker tag ai-service-bestbuy:latest username/ai-service-bestbuy:latest 
+docker tag makeline-service-bestbuy:latest username/makeline-service-bestbuy:latest 
+docker tag product-service-bestbuy:latest username/product-service-bestbuy:latest 
+docker tag store-front-bestbuy:latest username/store-front-bestbuy:latest
+docker tag virtual-worker-bestbuy:latest username/virtual-worker-bestbuy:latest 
+docker tag order-service-bestbuy:latest username/order-service-bestbuy:latest 
+docker tag store-admin-bestbuy:latest username/store-admin-bestbuy:latest 
+docker tag virtual-customer-bestbuy:latest username/virtual-customer-bestbuy:latest
+
+### Step 3: Upload Docker Images to the Repository
+
+docker push username/ai-service-bestbuy:latest 
+docker push username/makeline-service-bestbuy:latest 
+docker push username/product-service-bestbuy:latest 
+docker push username/store-front-bestbuy:latest
+docker push username/virtual-worker-bestbuy:latest 
+docker push username/order-service-bestbuy:latest 
+docker push username/store-admin-bestbuy:latest 
+docker push username/virtual-customer-bestbuy:latest 
+
 
 ---
 
----
 
-## **Demo Video**
 
-- [Demo Video Link](youtube-link)
-  - Showcases Store-Front and Store-Admin interfaces.
-  - Demonstrates order processing and AI integrations.
-
----
 

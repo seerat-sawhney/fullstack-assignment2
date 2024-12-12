@@ -115,29 +115,40 @@ The Best Buy Cloud-Native Application provides:
         - Click `add`
    - Click **Review + Create**, and then **Create**. The deployment will take a few minutes.
 
+4. **Connect to the AKS Cluster:**
+   - Once the AKS cluster is deployed, navigate to the cluster in the Azure Portal.
+   - In the overview page, click on **Connect**. 
+   - Select **Azure CLI** tap. You will need Azure CLI. If you don't have it: [**Install Azure CLI**](https://learn.microsoft.com/en-us/cli/azure/install-azure-cli?view=azure-cli-latest)
+   - Login to your azure account using the following command:
+      ```
+      az login
+      ```
+   - Set the cluster subscription using the command shown in the portal (it will look something like this):
+      ```
+      az account set --subscription 'subscribtion-id'
+      ```
 
-
-
-
-### Step 3: Configure kubectl Access
-1. Install the Azure CLI if you haven't already ([download link](https://docs.microsoft.com/en-us/cli/azure/install-azure-cli)).
-2. Sign in to Azure CLI:
-   ```bash
-   az login
-   ```
-3. Get AKS credentials:
-   ```bash
-   az aks get-credentials --resource-group bestbuy-app-rg --name bestbuy-aks
-   ```
-4. Verify connection to the cluster:
-   ```bash
-   kubectl get nodes
-   ```
+   - Copy the command shown in the portal for configuring `kubectl` (it will look something like this):
+     ```
+     az aks get-credentials --resource-group AlgonquinPetStoreRG --name AlgonquinPetStoreCluster
+     ```
+      **Understanding the Command:**
+      - The command `az aks get-credentials` pulls the necessary configuration files to enable `kubectl` to access your AKS cluster. Here’s a breakdown:
+     - `--resource-group` specifies the resource group where your AKS cluster resides.
+     - `--name` specifies the name of your AKS cluster.
+     - `--overwrite-existing` can be used to overwrite any existing Kubernetes configuration files for the same cluster. This is useful if you’ve connected to the cluster before or if multiple configurations exist for it.
+   - Verify Cluster Access:
+      - Test your connection to the AKS cluster by listing all nodes:
+        ```
+        kubectl get nodes
+        ```
+        You should see details of the nodes in your AKS cluster if the connection is successful.
 
 ---
 
 
-## 2. Set Up Azure OpenAI Service
+## 2. Set Up AI Backing Services 
+## Azure OpenAI Service
 
 ### Step 1: Create an OpenAI Service
 1. Navigate to **Azure OpenAI** in the Azure Portal.

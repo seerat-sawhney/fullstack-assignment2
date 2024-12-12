@@ -351,115 +351,9 @@ Explanation: The db.orders.find() command fetches and displays all documents (re
   
 
 
+## Testing and Validation
 
 
-
-
-
-
-
-
-## 3. Install Docker and Kubernetes CLI
-
-### Install Docker
-1. Download Docker Desktop for your operating system from [docker.com](https://www.docker.com/products/docker-desktop).
-2. Install Docker Desktop following the instructions for your OS.
-3. Verify Docker installation:
-   ```bash
-   docker --version
-   ```
-
-### Install Kubernetes CLI
-1. Download and install kubectl for your OS from [Kubernetes CLI Docs](https://kubernetes.io/docs/tasks/tools/).
-2. Verify kubectl installation:
-   ```bash
-   kubectl version --client
-   ```
-
-
-### **Steps to Deploy**
-
-#### **1. Clone the Repository**
-
-```bash
-git clone <repository-link>
-cd <repository>
-```
-
-#### **2. Build Docker Images**
-
-```bash
-docker build -t <dockerhub-username>/store-front .
-docker push <dockerhub-username>/store-front
-# Repeat for other services
-```
-
-#### **3. Set Up AKS Cluster**
-
-```bash
-az aks create --resource-group <resource-group> --name <cluster-name> --node-count 3
-```
-
-#### **4. Apply Kubernetes Configurations**
-
-```bash
-kubectl apply -f DeploymentFiles/store-front-deployment.yaml
-kubectl apply -f DeploymentFiles/order-service-deployment.yaml
-# Repeat for other services
-```
-
-#### **5. Configure Kubernetes Resources**
-
-- **Secrets**:
-  ```bash
-  kubectl create secret generic ai-keys --from-literal=API_KEY=<your-api-key>
-  ```
-- **ConfigMaps**:
-  ```bash
-  kubectl create configmap app-config --from-file=config.json
-  ```
-
-#### **6. Set Up Azure OpenAI Service**
-
-- Navigate to Azure Portal.
-- Create and configure GPT-4 and DALL-E models.
-- Retrieve API keys and encode them:
-
-  ```bash
-  echo -n "<your-api-key>" | base64
-  ```
-
-- Update `secrets.yaml` and deployment files with the encoded keys.
-
-#### **7. Access the Application**
-
-- Use the Kubernetes LoadBalancer IP to access the Store-Front and Store-Admin interfaces.
-
----
-
-## **Key Kubernetes Resources**
-
-### **Deployments**
-
-- Ensures specified replicas of pods are running.
-- Provides rolling updates and self-healing capabilities.
-
-### **StatefulSets**
-
-- Manages stateful applications like MongoDB.
-- Ensures stable storage and unique network identifiers for pods.
-
-### **Secrets**
-
-- Stores sensitive information securely, such as API keys.
-- Can be injected into pods as environment variables.
-
-### **ConfigMaps**
-
-- Decouples application configuration from code.
-- Stores non-sensitive data like environment variables.
-
----
 
 ## **Microservices and Docker Images**
 
@@ -469,21 +363,12 @@ kubectl apply -f DeploymentFiles/order-service-deployment.yaml
 | **Order-Service**    | [GitHub Link](github-link) | [Docker Hub Link](dockerhub-link) |
 | **Product-Service**  | [GitHub Link](github-link) | [Docker Hub Link](dockerhub-link) |
 | **Makeline-Service** | [GitHub Link](github-link) | [Docker Hub Link](dockerhub-link) |
+| **Store-admin**      | [GitHub Link](github-link) | [Docker Hub Link](dockerhub-link) |
 | **AI-Service**       | [GitHub Link](github-link) | [Docker Hub Link](dockerhub-link) |
+| **Virtual-Customer** | [GitHub Link](github-link) | [Docker Hub Link](dockerhub-link) |
+| **Virtual-worker**   | [GitHub Link](github-link) | [Docker Hub Link](dockerhub-link) |
 
 ---
-
-## **Scaling and Monitoring**
-
-- Scale services using Kubernetes horizontal pod autoscalers:
-
-  ```bash
-  kubectl autoscale deployment <deployment-name> --cpu-percent=50 --min=1 --max=10
-  ```
-
-- Monitor application health with Azure Monitor and Kubernetes tools:
-  - Configure alerts for resource usage.
-  - Use Prometheus and Grafana for detailed metrics visualization.
 
 ---
 
@@ -495,15 +380,3 @@ kubectl apply -f DeploymentFiles/order-service-deployment.yaml
 
 ---
 
-## **Issues or Limitations**
-
-(Optional) Document any challenges, bugs, or limitations faced during the implementation process.
-
----
-
-## **CI/CD Pipelines**
-
-- Implemented using GitHub Actions.
-- Automates Docker builds and Kubernetes deployments.
-
-Thank you for reviewing the Best Buy Cloud-Native Application. For any queries or issues, feel free to raise a GitHub issue in the respective repository!

@@ -72,7 +72,9 @@ The Best Buy Cloud-Native Application provides:
    - **Region**: Select the same region as your resource group i.e Canada Central.
    - **Node Count**: Start with 3 nodes (default).
    - **Node Image**: No schedule
-4.### Configure Node Pools
+  
+     
+### Configure Node Pools
 
  **First Node Pool: systemnode**
    - **Size**: D2as-V4
@@ -109,19 +111,16 @@ The Best Buy Cloud-Native Application provides:
 
 ## 2. Set Up Azure OpenAI Service
 
-### Step 1: Enable OpenAI in Azure
-1. If not already available in your subscription, request access to Azure OpenAI Service [here](https://aka.ms/oai/access).
-
-### Step 2: Create an OpenAI Service
+### Step 1: Create an OpenAI Service
 1. Navigate to **Azure OpenAI** in the Azure Portal.
 2. Click **+ Create**.
 3. Provide:
-   - **Resource Group**: Select your existing resource group (`bestbuy-app-rg`).
+   - **Resource Group**: Select your existing resource group(e.g., `bestbuyss').
    - **Region**: Select a region that supports OpenAI (e.g., East US).
    - **Pricing Tier**: Choose **Standard**.
 4. Click **Review + Create**, then **Create**.
 
-### Step 3: Deploy GPT-4 and DALL-E Models
+### Step 2: Deploy GPT-4 and DALL-E Models
 1. Open your OpenAI resource.
 2. Go to **Model Deployments** and click **+ Add Deployment**.
 3. Select:
@@ -129,8 +128,8 @@ The Best Buy Cloud-Native Application provides:
    - **Deployment Name**: Enter descriptive names (e.g., `gpt4-deployment`, `dalle-deployment`).
 4. Save the deployments.
 
-### Step 4: Retrieve API Key
-1. Open your OpenAI resource.
+### Step 3: Retrieve API Key
+1. Open your OpenAI resource> Home> Click on json file .
 2. Go to **Keys and Endpoints**.
 3. Copy the **API Key** and **Endpoint URL** for later use in your application.
 

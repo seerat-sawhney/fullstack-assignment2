@@ -88,9 +88,9 @@ The Best Buy Cloud-Native Application provides:
    - Click **Create** and select **Kubernetes cluster**
    - In the `Basics` tap fill in the following details:
      - **Subscription**: Select your subscription.
-     - **Resource group**: Choose `AlgonquinPetStoreRG`.
+     - **Resource group**: Choose `bestbuyseerat`.
      - **Cluster preset configuration**: Choose `Dev/Test`.
-     - **Kubernetes cluster name**: `AlgonquinPetStoreCluster`.
+     - **Kubernetes cluster name**: `bestbuylusterseerat`.
      - **Region**: Same as your resource group (e.g., `Canada`).
      - **Availability zones**: `None`.
      - **AKS pricing tier**: `Free`.

@@ -1,3 +1,4 @@
+# Assignment 2 - By Seerat Sawhney (041107886) 
 # Best Buy Cloud-Native Application
 
 ## **Introduction**
@@ -59,21 +60,33 @@ The Best Buy Cloud-Native Application provides:
 3. Click **+ Create**.
 4. Provide:
    - **Subscription**: Select your subscription.
-   - **Resource Group Name**: Enter a unique name (e.g., `bestbuy-app-rg`).
-   - **Region**: Choose a region close to your target audience.
+   - **Resource Group Name**: Enter a unique name (e.g., `bestbuyss').
+   - **Region**: Choose Canada Central
 5. Click **Review + Create**, then **Create**.
 
 ### Step 2: Create the AKS Cluster
 1. In the Azure Portal, navigate to **Azure Kubernetes Service**.
 2. Click **+ Create** > **Kubernetes Cluster**.
 3. Provide:
-   - **Cluster Name**: Enter a name (e.g., `bestbuy-aks`).
-   - **Region**: Select the same region as your resource group.
+   - **Cluster Name**: Enter a name (e.g., `bestbuyclusterseerat`).
+   - **Region**: Select the same region as your resource group i.e Canada Central.
    - **Node Count**: Start with 3 nodes (default).
-4. Configure **Node Pools**:
-   - Set **VM Size**: `Standard_DS2_v2` (suitable for medium workloads).
-5. Enable **Monitoring**:
-   - Under **Monitoring**, enable **Azure Monitor for containers**.
+   - **Node Image**: No schedule
+4.### Configure Node Pools
+
+ **First Node Pool: systemnode**
+   - **Size**: D2as-V4
+   - **Scale Method**: Manual
+   - **Node Count**: 1
+   - **Max Pods per Node**: 110
+
+ **First Node Pool: workernode**
+   - **Size**: D2as-V4
+   - **Scale Method**: Manual
+   - **Node Count**: 2
+   - **Max Pods per Node**: 30
+
+
 6. Click **Review + Create**, then **Create**.
 
 ### Step 3: Configure kubectl Access
@@ -93,33 +106,8 @@ The Best Buy Cloud-Native Application provides:
 
 ---
 
-## 2. Set Up Azure Service Bus
 
-### Step 1: Create a Service Bus Namespace
-1. Navigate to **Service Bus** in the Azure Portal.
-2. Click **+ Create**.
-3. Provide:
-   - **Namespace Name**: Enter a name (e.g., `bestbuy-bus`).
-   - **Pricing Tier**: Choose **Standard** for reliable messaging.
-   - **Region**: Same region as the AKS cluster.
-4. Click **Review + Create**, then **Create**.
-
-### Step 2: Create a Queue
-1. Open your Service Bus namespace.
-2. Go to **Queues** and click **+ Queue**.
-3. Provide:
-   - **Queue Name**: Enter a name (e.g., `orders-queue`).
-   - Enable **Max Queue Size**: Default 1 GB is sufficient.
-4. Save the queue.
-
-### Step 3: Retrieve Connection String
-1. Open your Service Bus namespace.
-2. Go to **Shared Access Policies** > **RootManageSharedAccessKey**.
-3. Copy the **Primary Connection String** for later use in your application.
-
----
-
-## 3. Set Up Azure OpenAI Service
+## 2. Set Up Azure OpenAI Service
 
 ### Step 1: Enable OpenAI in Azure
 1. If not already available in your subscription, request access to Azure OpenAI Service [here](https://aka.ms/oai/access).
@@ -148,7 +136,7 @@ The Best Buy Cloud-Native Application provides:
 
 ---
 
-## 4. Install Docker and Kubernetes CLI
+## 3. Install Docker and Kubernetes CLI
 
 ### Install Docker
 1. Download Docker Desktop for your operating system from [docker.com](https://www.docker.com/products/docker-desktop).

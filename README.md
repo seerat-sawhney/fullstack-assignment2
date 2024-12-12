@@ -373,36 +373,43 @@ Explanation: The db.orders.find() command fetches and displays all documents (re
 ### **Step 1: Construct Docker Images for All Repositories**
 
 ```bash
-docker build -t ai-service-bestbuy:latest .  
-docker build -t makeline-service-bestbuy:latest . 
-docker build -t product-service-bestbuy:latest . 
-docker build -t store-front-bestbuy:latest . 
-docker build -t virtual-worker-bestbuy:latest . 
-docker build -t order-service-bestbuy:latest .  
-docker build -t store-admin-bestbuy:latest .  
-docker build -t virtual-customer-bestbuy:latest .
+```bash
+docker build -t bestbuy-ai-service:latest .  
+docker build -t bestbuy -makeline-service:latest . 
+docker build -t bestbuy -product-service:latest . 
+docker build -t bestbuy -store-front:latest . 
+docker build -t bestbuy -virtual-worker:latest . 
+docker build -t bestbuy -order-service:latest .  
+docker build -t bestbuy -store-admin:latest .  
+docker build -t bestbuy -virtual-customer:latest .
+
+
 
 ### Step 2: Assign Tags to Docker Images
 
-docker tag ai-service-bestbuy:latest username/ai-service-bestbuy:latest 
-docker tag makeline-service-bestbuy:latest username/makeline-service-bestbuy:latest 
-docker tag product-service-bestbuy:latest username/product-service-bestbuy:latest 
-docker tag store-front-bestbuy:latest username/store-front-bestbuy:latest
-docker tag virtual-worker-bestbuy:latest username/virtual-worker-bestbuy:latest 
-docker tag order-service-bestbuy:latest username/order-service-bestbuy:latest 
-docker tag store-admin-bestbuy:latest username/store-admin-bestbuy:latest 
-docker tag virtual-customer-bestbuy:latest username/virtual-customer-bestbuy:latest
+docker tag bestbuy-ai-service:latest seerat19/ bestbuy-ai-service:latest 
+docker tag bestbuy-makeline-service:latest seerat19/ bestbuy-makeline-service:latest 
+docker tag bestbuy-product-service:latest seerat19/ bestbuy-product-service:latest 
+docker tag bestbuy-store-front:latest seerat19/ bestbuy-store-front:latest
+docker tag bestbuy-virtual-worker:latest seerat19/ bestbuy-virtual-worker:latest 
+docker tag bestbuy-order-service:latest seerat19/ bestbuy-order-service:latest 
+docker tag bestbuy-store-admin:latest seerat19/ bestbuy-store-admin:latest 
+docker tag bestbuy-virtual-customer:latest seerat19/ bestbuy-virtual-customer:latest
+
+
 
 ### Step 3: Upload Docker Images to the Repository
 
-docker push username/ai-service-bestbuy:latest 
-docker push username/makeline-service-bestbuy:latest 
-docker push username/product-service-bestbuy:latest 
-docker push username/store-front-bestbuy:latest
-docker push username/virtual-worker-bestbuy:latest 
-docker push username/order-service-bestbuy:latest 
-docker push username/store-admin-bestbuy:latest 
-docker push username/virtual-customer-bestbuy:latest 
+docker push seerat19/bestbuy-ai-service:latest 
+docker push seerat19/ bestbuy-makeline-service:latest 
+docker push seerat19/ bestbuy-product-service:latest 
+docker push seerat19/ bestbuy-store-front:latest
+docker push seerat19/ bestbuy-virtual-worker:latest 
+docker push seerat19/ bestbuy-order-service:latest 
+docker push seerat19/ bestbuy-store-admin:latest 
+docker push seerat19/ bestbuy-virtual-customer:latest 
+
+
 
 
 ---

@@ -27,10 +27,8 @@ The application has the following services:
 | `product-service` | This service is used to perform CRUD operations on products (Rust) |  |
 | `makeline-service` | This service handles processing orders from the queue and completing them (Golang) |  |
 | `ai-service` | Optional service for adding generative text and graphics creation (Python) |  |
-| `rabbitmq` | RabbitMQ for an order queue |  |
-| `mongodb` | MongoDB instance for persisted data |  |
-| `virtual-customer` | Simulates order creation on a scheduled basis (Rust) |  |
-| `virtual-worker` | Simulates order completion on a scheduled basis (Rust) |  |
+| `virtual-customer` | Simulates order creation on a scheduled basis (Rust) | https://github.com/seerat-sawhney/bestbuy-virtual-customer |
+| `virtual-worker` | Simulates order completion on a scheduled basis (Rust) | https://github.com/seerat-sawhney/bestbuy-virtual-worker |
 
 
 
@@ -80,7 +78,7 @@ The Best Buy Cloud-Native Application provides:
 2. **Create a Resource Group:**
    - In the Azure Portal, search for **Resource Groups** in the search bar.
    - Click **Create** and fill in the following:
-     - **Resource group name**: `AlgonquinPetStoreRG`
+     - **Resource group name**: `bestbuyseerat`
      - **Region**: `Canada`.
    - Click **Review + Create** and then **Create**.
 
@@ -132,7 +130,7 @@ The Best Buy Cloud-Native Application provides:
 
    - Copy the command shown in the portal for configuring `kubectl` (it will look something like this):
      ```
-     az aks get-credentials --resource-group AlgonquinPetStoreRG --name AlgonquinPetStoreCluster
+     az aks get-credentials --resource-group bestbuyseerat --name bestbuyseeratluster
      ```
       **Understanding the Command:**
       - The command `az aks get-credentials` pulls the necessary configuration files to enable `kubectl` to access your AKS cluster. Here’s a breakdown:
@@ -378,7 +376,7 @@ kubectl get pods
 - Login with the default credentials (`username`/`password`).
 
 ### MongoDB Shell Access and Database Exploration
-In this section, you will use the MongoDB shell to interact with the `orderdb` database, which stores order information for the Algonquin Pet Store application. Follow the steps below to connect to the MongoDB pod and explore its contents.
+In this section, you will use the MongoDB shell to interact with the `orderdb` database, which stores order information for the best buy application. Follow the steps below to connect to the MongoDB pod and explore its contents.
 
 #### **1- Access the MongoDB Shell**
 Run the following command to connect to the MongoDB shell inside the running MongoDB pod:

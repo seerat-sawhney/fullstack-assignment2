@@ -356,7 +356,6 @@ Explanation: The db.orders.find() command fetches and displays all documents (re
 
 ## Testing and Validation
 
-
 ## **Microservices and Docker Images**
 
 | **Service**          | **Docker Image  Link**     | 
@@ -372,7 +371,7 @@ Explanation: The db.orders.find() command fetches and displays all documents (re
 
 ---
 ## Docker
-
+![alt text](s3.png)
 ### **Step 1: Construct Docker Images for All Repositories**
 
 ```bash

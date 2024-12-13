@@ -153,26 +153,26 @@ The Best Buy Cloud-Native Application provides:
 ```bash
 ```bash
 docker build -t bestbuy-ai-service:latest .  
-docker build -t bestbuy -makeline-service:latest . 
-docker build -t bestbuy -product-service:latest . 
-docker build -t bestbuy -store-front:latest . 
-docker build -t bestbuy -virtual-worker:latest . 
-docker build -t bestbuy -order-service:latest .  
-docker build -t bestbuy -store-admin:latest .  
-docker build -t bestbuy -virtual-customer:latest .
+docker build -t bestbuy-makeline-service:latest . 
+docker build -t bestbuy-product-service:latest . 
+docker build -t bestbuy-store-front:latest . 
+docker build -t bestbuy-virtual-worker:latest . 
+docker build -t bestbuy-order-service:latest .  
+docker build -t bestbuy-store-admin:latest .  
+docker build -t bestbuy-virtual-customer:latest .
 
 ```
 ### Step 2: Assign Tags to Docker Images
 ```bash
 
-docker tag bestbuy-ai-service:latest seerat19/ bestbuy-ai-service:latest 
-docker tag bestbuy-makeline-service:latest seerat19/ bestbuy-makeline-service:latest 
-docker tag bestbuy-product-service:latest seerat19/ bestbuy-product-service:latest 
-docker tag bestbuy-store-front:latest seerat19/ bestbuy-store-front:latest
-docker tag bestbuy-virtual-worker:latest seerat19/ bestbuy-virtual-worker:latest 
-docker tag bestbuy-order-service:latest seerat19/ bestbuy-order-service:latest 
-docker tag bestbuy-store-admin:latest seerat19/ bestbuy-store-admin:latest 
-docker tag bestbuy-virtual-customer:latest seerat19/ bestbuy-virtual-customer:latest
+docker tag bestbuy-ai-service:latest seerat19/bestbuy-ai-service:latest 
+docker tag bestbuy-makeline-service:latest seerat19/bestbuy-makeline-service:latest 
+docker tag bestbuy-product-service:latest seerat19/bestbuy-product-service:latest 
+docker tag bestbuy-store-front:latest seerat19/bestbuy-store-front:latest
+docker tag bestbuy-virtual-worker:latest seerat19/bestbuy-virtual-worker:latest 
+docker tag bestbuy-order-service:latest seerat19/bestbuy-order-service:latest 
+docker tag bestbuy-store-admin:latest seerat19/bestbuy-store-admin:latest 
+docker tag bestbuy-virtual-customer:latest seerat19/bestbuy-virtual-customer:latest
 
 ```
 ### Step 3: Upload Docker Images to the Repository
@@ -180,13 +180,13 @@ docker tag bestbuy-virtual-customer:latest seerat19/ bestbuy-virtual-customer:la
 
 
 docker push seerat19/bestbuy-ai-service:latest 
-docker push seerat19/ bestbuy-makeline-service:latest 
-docker push seerat19/ bestbuy-product-service:latest 
-docker push seerat19/ bestbuy-store-front:latest
-docker push seerat19/ bestbuy-virtual-worker:latest 
-docker push seerat19/ bestbuy-order-service:latest 
-docker push seerat19/ bestbuy-store-admin:latest 
-docker push seerat19/ bestbuy-virtual-customer:latest 
+docker push seerat19/bestbuy-makeline-service:latest 
+docker push seerat19/bestbuy-product-service:latest 
+docker push seerat19/bestbuy-store-front:latest
+docker push seerat19/bestbuy-virtual-worker:latest 
+docker push seerat19/bestbuy-order-service:latest 
+docker push seerat19/bestbuy-store-admin:latest 
+docker push seerat19/bestbuy-virtual-customer:latest 
 
 ```
 

@@ -384,9 +384,9 @@ docker build -t bestbuy -order-service:latest .
 docker build -t bestbuy -store-admin:latest .  
 docker build -t bestbuy -virtual-customer:latest .
 
-
-
+```
 ### Step 2: Assign Tags to Docker Images
+```bash
 
 docker tag bestbuy-ai-service:latest seerat19/ bestbuy-ai-service:latest 
 docker tag bestbuy-makeline-service:latest seerat19/ bestbuy-makeline-service:latest 
@@ -397,9 +397,10 @@ docker tag bestbuy-order-service:latest seerat19/ bestbuy-order-service:latest
 docker tag bestbuy-store-admin:latest seerat19/ bestbuy-store-admin:latest 
 docker tag bestbuy-virtual-customer:latest seerat19/ bestbuy-virtual-customer:latest
 
-
-
+```
 ### Step 3: Upload Docker Images to the Repository
+```bash
+
 
 docker push seerat19/bestbuy-ai-service:latest 
 docker push seerat19/ bestbuy-makeline-service:latest 
@@ -410,7 +411,7 @@ docker push seerat19/ bestbuy-order-service:latest
 docker push seerat19/ bestbuy-store-admin:latest 
 docker push seerat19/ bestbuy-virtual-customer:latest 
 
-
+```
 
 
 ---

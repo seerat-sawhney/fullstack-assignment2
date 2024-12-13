@@ -1,4 +1,4 @@
-# Assignment 2 
+# Full Stack - Assignment 2 
 # Submitted By:- Seerat Sawhney ( Student Id: 041107886 )
 # Best Buy Cloud-Native Application
 

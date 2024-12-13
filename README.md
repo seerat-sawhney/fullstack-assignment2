@@ -115,6 +115,7 @@ The Best Buy Cloud-Native Application provides:
         - **Node count**: `2`
         - Click `add`
    - Click **Review + Create**, and then **Create**. The deployment will take a few minutes.
+     ![alt text](s1.png)
 
 4. **Connect to the AKS Cluster:**
    - Once the AKS cluster is deployed, navigate to the cluster in the Azure Portal.
@@ -158,7 +159,8 @@ The Best Buy Cloud-Native Application provides:
 
 2. **Create a Resource**:
    - Select **Create a Resource** from the Azure portal dashboard.
-   - Search for **Azure OpenAI** in the marketplace.
+   - Search for **Azure OpenAI**
+   ![alt text](s2.png)
 
 3. **Set Up the Azure OpenAI Resource**:
    - Choose the **East US** region for deployment to ensure capacity for GPT-4 and DALL-E 3 models.

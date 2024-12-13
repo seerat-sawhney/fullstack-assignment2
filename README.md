@@ -147,9 +147,72 @@ The Best Buy Cloud-Native Application provides:
         You should see details of the nodes in your AKS cluster if the connection is successful.
 
 ---
+## Docker
+## Testing and Validation
+
+### **Step 1: Construct Docker Images for All Repositories**
+
+```bash
+```bash
+docker build -t bestbuy-ai-service:latest .  
+docker build -t bestbuy -makeline-service:latest . 
+docker build -t bestbuy -product-service:latest . 
+docker build -t bestbuy -store-front:latest . 
+docker build -t bestbuy -virtual-worker:latest . 
+docker build -t bestbuy -order-service:latest .  
+docker build -t bestbuy -store-admin:latest .  
+docker build -t bestbuy -virtual-customer:latest .
+
+```
+### Step 2: Assign Tags to Docker Images
+```bash
+
+docker tag bestbuy-ai-service:latest seerat19/ bestbuy-ai-service:latest 
+docker tag bestbuy-makeline-service:latest seerat19/ bestbuy-makeline-service:latest 
+docker tag bestbuy-product-service:latest seerat19/ bestbuy-product-service:latest 
+docker tag bestbuy-store-front:latest seerat19/ bestbuy-store-front:latest
+docker tag bestbuy-virtual-worker:latest seerat19/ bestbuy-virtual-worker:latest 
+docker tag bestbuy-order-service:latest seerat19/ bestbuy-order-service:latest 
+docker tag bestbuy-store-admin:latest seerat19/ bestbuy-store-admin:latest 
+docker tag bestbuy-virtual-customer:latest seerat19/ bestbuy-virtual-customer:latest
+
+```
+### Step 3: Upload Docker Images to the Repository
+```bash
 
 
-## 2. Set Up AI Backing Services 
+docker push seerat19/bestbuy-ai-service:latest 
+docker push seerat19/ bestbuy-makeline-service:latest 
+docker push seerat19/ bestbuy-product-service:latest 
+docker push seerat19/ bestbuy-store-front:latest
+docker push seerat19/ bestbuy-virtual-worker:latest 
+docker push seerat19/ bestbuy-order-service:latest 
+docker push seerat19/ bestbuy-store-admin:latest 
+docker push seerat19/ bestbuy-virtual-customer:latest 
+
+```
+
+## **Microservices and Docker Images**
+
+| **Service**          | **Docker Image  Link**     | 
+| -------------------- | -------------------------- | 
+| **Store-Front**      | https://hub.docker.com/r/seerat19/bestbuy-store-front/tags | 
+| **Order-Service**    | https://hub.docker.com/r/seerat19/bestbuy-order-service/tags | 
+| **Product-Service**  | https://hub.docker.com/r/seerat19/bestbuy-product-service/tags | 
+| **Makeline-Service** | https://hub.docker.com/r/seerat19/bestbuy-makeline-service/tags | 
+| **Store-admin**      | https://hub.docker.com/r/seerat19/bestbuy-store-admin/tags | 
+| **AI-Service**       | https://hub.docker.com/r/seerat19/bestbuy-ai-service/tags | 
+| **Virtual-Customer** | https://hub.docker.com/r/seerat19/bestbuy-virtual-customer/tags | 
+| **Virtual-worker**   |  https://hub.docker.com/r/seerat19/bestbuy-virtual-worker/tags| 
+
+---
+## Docker
+![alt text](s3.png)
+
+---
+
+
+## 3. Set Up AI Backing Services 
 ## Azure OpenAI Service
 
 ### Task 1: Create an Azure OpenAI Service Instance
@@ -172,6 +235,7 @@ The Best Buy Cloud-Native Application provides:
    - Click **Review + Create** and then **Create** to deploy the Azure OpenAI service.
 
 ---
+
 
 ### Task 2: Deploy the GPT-4 and DALL-E 3 Models
 
@@ -353,66 +417,6 @@ Explanation: The db.orders.find() command fetches and displays all documents (re
 - Query the orders collection to examine the data structure and stored records.
   
 
-
-## Testing and Validation
-
-## **Microservices and Docker Images**
-
-| **Service**          | **Docker Image  Link**     | 
-| -------------------- | -------------------------- | 
-| **Store-Front**      | https://hub.docker.com/r/seerat19/bestbuy-store-front/tags | 
-| **Order-Service**    | https://hub.docker.com/r/seerat19/bestbuy-order-service/tags | 
-| **Product-Service**  | https://hub.docker.com/r/seerat19/bestbuy-product-service/tags | 
-| **Makeline-Service** | https://hub.docker.com/r/seerat19/bestbuy-makeline-service/tags | 
-| **Store-admin**      | https://hub.docker.com/r/seerat19/bestbuy-store-admin/tags | 
-| **AI-Service**       | https://hub.docker.com/r/seerat19/bestbuy-ai-service/tags | 
-| **Virtual-Customer** | https://hub.docker.com/r/seerat19/bestbuy-virtual-customer/tags | 
-| **Virtual-worker**   |  https://hub.docker.com/r/seerat19/bestbuy-virtual-worker/tags| 
-
----
-## Docker
-![alt text](s3.png)
-### **Step 1: Construct Docker Images for All Repositories**
-
-```bash
-```bash
-docker build -t bestbuy-ai-service:latest .  
-docker build -t bestbuy -makeline-service:latest . 
-docker build -t bestbuy -product-service:latest . 
-docker build -t bestbuy -store-front:latest . 
-docker build -t bestbuy -virtual-worker:latest . 
-docker build -t bestbuy -order-service:latest .  
-docker build -t bestbuy -store-admin:latest .  
-docker build -t bestbuy -virtual-customer:latest .
-
-```
-### Step 2: Assign Tags to Docker Images
-```bash
-
-docker tag bestbuy-ai-service:latest seerat19/ bestbuy-ai-service:latest 
-docker tag bestbuy-makeline-service:latest seerat19/ bestbuy-makeline-service:latest 
-docker tag bestbuy-product-service:latest seerat19/ bestbuy-product-service:latest 
-docker tag bestbuy-store-front:latest seerat19/ bestbuy-store-front:latest
-docker tag bestbuy-virtual-worker:latest seerat19/ bestbuy-virtual-worker:latest 
-docker tag bestbuy-order-service:latest seerat19/ bestbuy-order-service:latest 
-docker tag bestbuy-store-admin:latest seerat19/ bestbuy-store-admin:latest 
-docker tag bestbuy-virtual-customer:latest seerat19/ bestbuy-virtual-customer:latest
-
-```
-### Step 3: Upload Docker Images to the Repository
-```bash
-
-
-docker push seerat19/bestbuy-ai-service:latest 
-docker push seerat19/ bestbuy-makeline-service:latest 
-docker push seerat19/ bestbuy-product-service:latest 
-docker push seerat19/ bestbuy-store-front:latest
-docker push seerat19/ bestbuy-virtual-worker:latest 
-docker push seerat19/ bestbuy-order-service:latest 
-docker push seerat19/ bestbuy-store-admin:latest 
-docker push seerat19/ bestbuy-virtual-customer:latest 
-
-```
 
 
 ---

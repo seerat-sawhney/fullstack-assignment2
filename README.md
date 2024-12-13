@@ -21,12 +21,12 @@ The application has the following services:
 
 | Service | Description | Github Repo |
 | --- | --- | --- |
-| `store-front` | Web app for customers to place orders (Vue.js) | link |
-| `store-admin` | Web app used by store employees to view orders in queue and manage products (Vue.js) |  |
-| `order-service` | This service is used for placing orders (Javascript) |  |
-| `product-service` | This service is used to perform CRUD operations on products (Rust) |  |
-| `makeline-service` | This service handles processing orders from the queue and completing them (Golang) |  |
-| `ai-service` | Optional service for adding generative text and graphics creation (Python) |  |
+| `store-front` | Web app for customers to place orders (Vue.js) | https://github.com/seerat-sawhney/bestbuy-store-front |
+| `store-admin` | Web app used by store employees to view orders in queue and manage products (Vue.js) | https://github.com/seerat-sawhney/bestbuy-store-admin |
+| `order-service` | This service is used for placing orders (Javascript) | https://github.com/seerat-sawhney/bestbuy-order-service |
+| `product-service` | This service is used to perform CRUD operations on products (Rust) | https://github.com/seerat-sawhney/bestbuy-product-service |
+| `makeline-service` | This service handles processing orders from the queue and completing them (Golang) | https://github.com/seerat-sawhney/bestbuy-makeline-service |
+| `ai-service` | Optional service for adding generative text and graphics creation (Python) | https://github.com/seerat-sawhney/bestbuy-ai-service |
 | `virtual-customer` | Simulates order creation on a scheduled basis (Rust) | https://github.com/seerat-sawhney/bestbuy-virtual-customer |
 | `virtual-worker` | Simulates order completion on a scheduled basis (Rust) | https://github.com/seerat-sawhney/bestbuy-virtual-worker |
 
